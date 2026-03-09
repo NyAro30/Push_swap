@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:42:45 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/09 10:16:48 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/09 11:30:41 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ int		stack_size(t_stack *stack);
 void	bring_to_top(t_stack **stack_a, int position, int size);
 float	calculate_disorder(t_stack *stack_a);
 int		find_min_position(t_stack *stack);
+int		find_max_position(t_stack *stack);
+int		is_in_chunk(int index, int chunk_min, int chunk_max);
+int		find_in_chunk(t_stack *stack, int chunk_min, int chunk_max);
 
 
 #endif

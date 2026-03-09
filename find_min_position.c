@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 09:50:20 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/09 09:56:48 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/09 10:36:18 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ int	find_min_position(t_stack *stack)
     int	current_pos;
 
     if (!stack)           /* Protection : stack vide */
-        return (-1);
-    
+        return (-1); 
     current_pos = 0;
     min_pos = 0;
     min_value = stack->value;
-    
     while (stack)         /* ← CORRIGÉ : stack, pas stack->next */
     {
         if (stack->value < min_value)   /* ← CORRIGÉ : <, pas > */
