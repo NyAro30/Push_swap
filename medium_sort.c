@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 09:48:11 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/09 16:17:38 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:44:52 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b)
 
 void	medium_sort(t_stack **stack_a, t_stack **stack_b)
 {
+	if (!*stack_a || (*stack_a)->next)
+		return ;
 	push_chunks_to_b(stack_a, stack_b);
 	push_max_to_a(stack_a, stack_b);
 }
