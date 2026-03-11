@@ -17,6 +17,8 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 	int	size;
 	int	min_pos;
 
+	if (!*stack_a || (*stack_a)->next)
+		return ;
 	size = stack_size(*stack_a);
 	while (*stack_a)
 	{
