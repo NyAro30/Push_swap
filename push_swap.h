@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:42:45 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/10 14:04:38 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/12 16:12:45 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int					find_in_chunk(t_stack *stack, int chunk_min, int chunk_max);
 int					get_bit(int number, int bit_position);
 static void			process_bits(t_stack **stack_a, t_stack **stack_b, int bit);
 int					count_bits(int n);
+void				sa(t_stack **stack_a);
+void				sb(t_stack **stack_b);
 
 
 #endif
