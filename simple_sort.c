@@ -17,18 +17,18 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 	int	size;
 	int	min_pos;
 
-	if (!*stack_a || (*stack_a)->next)
+	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	size = stack_size(*stack_a);
 	while (*stack_a)
 	{
-		min_pos = find_min_position(*stack_a);
+		min_pos = find_max_position(*stack_a);
 		bring_to_top(stack_a, min_pos, size);
 		pb(stack_a, stack_b);
 		size--;
 	}
 	while (*stack_b)
 	{
-		pa(stack_b, stack_a);
+		pa(stack_a, stack_b);
 	}
 }

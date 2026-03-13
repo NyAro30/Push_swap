@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sahrandr <sahrandr@student.42antananari    +#+  +:+       +#+        */
+/*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 09:57:50 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/04 14:42:48 by sahrandr         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:46:22 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	ft_isdi(char *str)
 	if (!str)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
-        i++;
-    if (str[i] == '\0')
-        return (0);
+		i++;
+	if (str[i] == '\0')
+		return (0);
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))

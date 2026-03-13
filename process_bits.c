@@ -6,13 +6,13 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 14:00:21 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/10 14:16:59 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:16:13 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	process_bits(t_stack **stack_a, t_stack **stack_b, int bit)
+void	process_bits(t_stack **stack_a, t_stack **stack_b, int bit)
 {
     int	size;
     int	i;

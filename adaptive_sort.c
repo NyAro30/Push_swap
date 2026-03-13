@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 10:24:24 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/11 12:47:27 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:41:49 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	adaptive_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	float	disorder;
 
-	if (!*stack_a || (*stack_a)->next)
+	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	disorder = calculate_disorder(*stack_a);
 	if (disorder ==  0)
@@ -27,5 +27,5 @@ void	adaptive_sort(t_stack **stack_a, t_stack **stack_b)
 	else if (disorder < 0.5)
 		medium_sort(stack_a, stack_b);
 	else
-		complexe_sort(stack_a, stack_b);
+		complex_sort(stack_a, stack_b);
 }

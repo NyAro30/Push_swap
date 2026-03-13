@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complexe_sort.c                                    :+:      :+:    :+:   */
+/*   complex_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 14:22:35 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/11 13:44:32 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:14:45 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	complex_sort(t_stack **stack_a, t_stack **stack_b)
     int	bits;
     int	current_bit;
 
-	if (!*stack_a || (*stack_a)->next)
+	if (!*stack_a || !(*stack_a)->next)
 		return ;
     bits = count_bits(stack_size(*stack_a));
 	current_bit = 0;

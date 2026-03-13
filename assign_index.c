@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 13:40:25 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/08 14:30:12 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:13:28 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	set_indexes(t_stack *stack, int *tab, int size)
 	while (stack)
 	{
 		i = 0;
-		while (i < size);
+		while (i < size)
 		{
 			if (stack ->value == tab[i])
 			{
