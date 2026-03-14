@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:42:45 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/14 07:30:49 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/14 13:08:15 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define STRATEGY_ADAPTIVE  0
+#define STRATEGY_SIMPLE    1
+#define STRATEGY_MEDIUM    2
+#define STRATEGY_COMPLEX   3
+
 typedef struct s_stack
 {
     int             value;
@@ -23,6 +28,11 @@ typedef struct s_stack
     struct s_stack  *next;
     struct s_stack  *prev;
 }   t_stack;
+typedef struct s_options
+{
+    int		strategy;
+    int		bench_mode;
+}	t_options;
 
 t_stack *create_node(int value);
 void    free_stack(t_stack **stack);
@@ -35,6 +45,7 @@ int     is_duplicate(t_stack *stack_a, int num);
 void    ft_lstadd_back(t_stack **stack, t_stack *new_node);
 int     stack_size(t_stack *stack);
 void    assign_index(t_stack *stack_a);
+int		ft_strcmp(char *s1, char *s2);
 float   calculate_disorder(t_stack *stack_a);
 void	process_bits(t_stack **stack_a, t_stack **stack_b, int bit);
 void    sa(t_stack **a);

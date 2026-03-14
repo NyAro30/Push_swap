@@ -6,11 +6,20 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 15:56:17 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/14 08:43:16 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/14 10:59:26 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	is_flag(char *arg)
+{
+	if (arg == "--simple" || arg == "--medium" || arg == "--complex" 
+		|| arg == "--adaptive" || arg == "--bench")
+		return (1);
+	else
+		return (0);	
+}
 
 static int	handle_error(t_stack **stack_a, char **args, int must_free)
 {
@@ -64,7 +73,8 @@ int	main(int argc, char **argv)
 	}
 	else
 		args = argv + 1;
-	fill_stack(&stack_a, args, (argc == 2));
+	if (fill_stack(&stack_a, args, (argc == 2)))
+    	return (1);
 	if (stack_size(stack_a) > 1)
 		adaptive_sort(&stack_a, &stack_b);
 	if (argc == 2)
