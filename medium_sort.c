@@ -6,13 +6,13 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 09:48:11 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/13 12:08:08 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/13 16:19:02 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void push_max_to_a(t_stack **stack_a, t_stack **stack_b)
+static void	push_max_to_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int	max_pos;
 	int	size;
@@ -33,7 +33,7 @@ static void	push_chunks_to_b(t_stack **stack_a, t_stack **stack_b)
 	int	position;
 	int	chunk_max;
 	int	chunk_min;
-	
+
 	chunk_size = stack_size(*stack_a) / count_chunk(stack_size(*stack_a));
 	current_chunk = 0;
 	while (*stack_a)

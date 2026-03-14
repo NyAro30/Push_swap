@@ -22,7 +22,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 	size = stack_size(*stack_a);
 	while (*stack_a)
 	{
-		min_pos = find_max_position(*stack_a);
+		min_pos = find_min_position(*stack_a);
 		bring_to_top(stack_a, min_pos, size);
 		pb(stack_a, stack_b);
 		size--;

@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 14:00:21 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/13 11:16:13 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:33:51 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	process_bits(t_stack **stack_a, t_stack **stack_b, int bit)
 	while (i < size)
 	{
 		if (get_bit((*stack_a)->index, bit) == 0)
-			ra(stack_a);
-		else
 			pb(stack_a, stack_b);
+		else
+			ra(stack_a);
 		i++;
 	}
 	while (*stack_b)

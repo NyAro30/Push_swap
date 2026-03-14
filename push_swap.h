@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:42:45 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/13 11:44:58 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/14 07:30:49 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 t_stack *create_node(int value);
 void    free_stack(t_stack **stack);
 void    free_split(char **tab);
-int     ft_atoi(const char *nptr);
+int		ft_atoi(const char *nptr, int *error);
 int     ft_isdi(char *str);
 char    **ft_split_mod(char const *s, char c);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
