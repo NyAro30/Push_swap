@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_max_position.c                                :+:      :+:    :+:   */
+/*   print_disorder.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sahrandr <sahrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 10:33:06 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/27 11:30:43 by sahrandr         ###   ########.fr       */
+/*   Created: 2026/03/27 08:09:50 by sahrandr          #+#    #+#             */
+/*   Updated: 2026/03/27 08:18:18 by sahrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_max_position(t_stack *stack)
+void	print_disorder(float disorder)
 {
-	int	max_value;
-	int	max_pos;
-	int	current_pos;
+	int	value;
 
-	if (!stack)
-		return (-1);
-	current_pos = 0;
-	max_pos = 0;
-	max_value = stack->value;
-	while (stack)
-	{
-		if (stack->value > max_value)
-		{
-			max_value = stack->value;
-			max_pos = current_pos;
-		}
-		current_pos++;
-		stack = stack->next;
-	}
-	return (max_pos);
+	value = (int)(disorder * 10000 + 0.5f);
+	ft_putstr_fd("[bench] disorder: ", 2);
+	ft_putnbr_fd(value / 100, 2);
+	ft_putstr_fd(".", 2);
+	if (value % 100 < 10)
+		ft_putstr_fd("0", 2);
+	ft_putnbr_fd(value % 100, 2);
+	ft_putstr_fd("%\n", 2);
 }

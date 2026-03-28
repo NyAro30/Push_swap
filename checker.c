@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
+/*   By: sahrandr <sahrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 15:04:59 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/26 17:31:18 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:33:37 by sahrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int		checker_fill_stack(t_stack **stack_a, char **args, int must_free);
 int		do_instruction(char *line, t_stack **a, t_stack **b);

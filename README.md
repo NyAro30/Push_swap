@@ -55,16 +55,16 @@ Responsibilities:
 
 **Phase 1 (Week 1)**
 - Shared: build `push_swap.h` together (structs + prototypes).
-- Person A: base list functions and first moves.
-- Person B: parsing, error handling, and `main` skeleton.
+- sahrandr: base list functions and first moves.
+- mny-aro-: parsing, error handling, and `main` skeleton.
 
 **Phase 2 (Week 2)**
-- Person A: finish all move functions.
-- Person B: integrate and complete small-sort logic.
+- sahrandr: finish all move functions.
+- mny-aro-: integrate and complete small-sort logic.
 
 **Phase 3 (Week 3)**
-- Person A: debugging support and utility optimization help.
-- Person B: implement and optimize large-sort strategy.
+-sahrandr: debugging support and utility optimization help.
+- mny-aro-: implement and optimize large-sort strategy.
 
 Both learners reviewed and validated all critical code paths together.
 
@@ -86,8 +86,6 @@ Both learners reviewed and validated all critical code paths together.
   - `./push_swap --adaptive 4 67 3 87 23`
 - Benchmark mode:
   - `./push_swap --bench --adaptive 4 67 3 87 23`
-- Count-only mode:
-  - `./push_swap --count-only 3 2 1`
 
 ### Checker
 - Internal checker:

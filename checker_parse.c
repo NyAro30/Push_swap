@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker_parse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
+/*   By: sahrandr <sahrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 17:35:00 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/26 17:31:46 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:32:51 by sahrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 static int	handle_error(t_stack **stack_a, char **args, int must_free)
 {

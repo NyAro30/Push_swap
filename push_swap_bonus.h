@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_max_position.c                                :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sahrandr <sahrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 10:33:06 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/27 11:30:43 by sahrandr         ###   ########.fr       */
+/*   Created: 2026/03/27 13:53:15 by sahrandr          #+#    #+#             */
+/*   Updated: 2026/03/27 15:02:51 by sahrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
-int	find_max_position(t_stack *stack)
-{
-	int	max_value;
-	int	max_pos;
-	int	current_pos;
+# include "push_swap.h"
 
-	if (!stack)
-		return (-1);
-	current_pos = 0;
-	max_pos = 0;
-	max_value = stack->value;
-	while (stack)
-	{
-		if (stack->value > max_value)
-		{
-			max_value = stack->value;
-			max_pos = current_pos;
-		}
-		current_pos++;
-		stack = stack->next;
-	}
-	return (max_pos);
-}
+int		do_instruction(char *line, t_stack **a, t_stack **b);
+int		checker_fill_stack(t_stack **stack_a, char **args, int must_free);
+char	*read_instruction(void);
+
+#endif

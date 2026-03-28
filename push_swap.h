@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
+/*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:42:45 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/26 17:35:35 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/28 16:30:03 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,7 @@ typedef enum e_strategy
 	STRAT_ADAPTIVE
 }					t_strategy;
 
-# define SA 1
-# define SB 2
-# define SS 3
-# define PA 4
-# define PB 5
-# define RA 6
-# define RB 7
-# define RR 8
-# define RRA 9
-# define RRB 10
-# define RRR 11
-
 # define MODE_BENCH 1
-# define MODE_COUNT_ONLY 2
 
 typedef struct s_stats
 {
@@ -62,16 +49,8 @@ typedef struct s_stats
 	int				count_rrb;
 	int				count_rrr;
 	int				print_ops;
+	t_strategy		actual_strat;
 }					t_stats;
-
-typedef struct s_ctx
-{
-	t_stack			*a;
-	t_stack			*b;
-	t_stats			stats;
-	t_strategy		strat;
-	int				mode;
-}					t_ctx;
 
 void				init_stats(t_stats *stats);
 t_stack				*create_node(int value);
@@ -100,7 +79,6 @@ void				rr(t_stack **a, t_stack **b, t_stats *stats);
 void				rra(t_stack **a, t_stats *stats);
 void				rrb(t_stack **b, t_stats *stats);
 void				rrr(t_stack **a, t_stack **b, t_stats *stats);
-int					find_min_position(t_stack *stack);
 int					find_max_position(t_stack *stack);
 void				bring_to_top(t_stack **s, int pos, int size, t_stats *st);
 void				simple_sort(t_stack **a, t_stack **b, t_stats *stats);
@@ -118,10 +96,12 @@ void				dispatch_sort(t_stack **a, t_stack **b, t_strategy st,
 void				sort_3(t_stack **a, t_stats *stats);
 void				sort_5(t_stack **a, t_stack **b, t_stats *stats);
 int					fill_stack(t_stack **stack_a, char **args, int must_free);
-int					parse_flags(int ac, char **av, t_strategy *st, int *m);
+int					parse_flags(int argc, char **argv, t_strategy *strat,
+						int *mode);
 void				sort_and_bench(t_stack **a, t_stack **b, t_strategy st,
 						int m);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
+void				print_disorder(float disorder);
 
 #endif

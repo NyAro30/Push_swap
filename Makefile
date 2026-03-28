@@ -14,7 +14,6 @@ COMMON_SRCS	= adaptive_sort.c \
               create_node.c \
               find_in_chunk.c \
               find_max_position.c \
-              find_min_position.c \
               free_split.c \
               free_stack.c \
               ft_atoi.c \
@@ -31,6 +30,7 @@ COMMON_SRCS	= adaptive_sort.c \
               parse_flags.c \
               process_bits.c \
               push_utils.c \
+			  print_disorder.c\
               reverse_rotate.c \
               rotation_utils.c \
               simple_sort.c \

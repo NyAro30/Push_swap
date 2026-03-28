@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mny-aro- <mny-aro-@student.42antananari    +#+  +:+       +#+        */
+/*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 15:56:17 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/26 17:25:59 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/28 16:19:05 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ static void	print_operations(t_stats stats)
 	ft_putnbr_fd(stats.count_pa, 2);
 	ft_putstr_fd(", pb: ", 2);
 	ft_putnbr_fd(stats.count_pb, 2);
-	ft_putstr_fd(", ra: ", 2);
+	ft_putstr_fd("\n[bench] ", 2);
+	ft_putstr_fd("ra: ", 2);
 	ft_putnbr_fd(stats.count_ra, 2);
 	ft_putstr_fd(", rb: ", 2);
 	ft_putnbr_fd(stats.count_rb, 2);
@@ -76,19 +77,24 @@ static void	print_operations(t_stats stats)
 
 static void	print_benchmark(t_stats stats, float disorder, t_strategy strat)
 {
-	ft_putstr_fd("[bench] Disorder: ", 2);
-	ft_putnbr_fd((int)(disorder * 100), 2);
-	ft_putstr_fd("%\n", 2);
-	ft_putstr_fd("[bench] Strategy: ", 2);
-	if (strat == STRAT_SIMPLE)
+	print_disorder(disorder);
+	ft_putstr_fd("[bench] strategy: ", 2);
+	if (strat == STRAT_ADAPTIVE)
+	{
+		if (stats.actual_strat == STRAT_SIMPLE)
+			ft_putstr_fd("adaptive / O(n^2)\n", 2);
+		else if (stats.actual_strat == STRAT_MEDIUM)
+			ft_putstr_fd("adaptive / O(n√n)\n", 2);
+		else
+			ft_putstr_fd("adaptive / O(n log n)\n", 2);
+	}
+	else if (strat == STRAT_SIMPLE)
 		ft_putstr_fd("simple (O(n^2))\n", 2);
 	else if (strat == STRAT_MEDIUM)
-		ft_putstr_fd("medium (O(n*sqrt(n)))\n", 2);
-	else if (strat == STRAT_COMPLEX)
-		ft_putstr_fd("complex (O(n log n))\n", 2);
+		ft_putstr_fd("medium O(n√n)\n", 2);
 	else
-		ft_putstr_fd("adaptive\n", 2);
-	ft_putstr_fd("[bench] Total operations: ", 2);
+		ft_putstr_fd("complex (O(n log n))\n", 2);
+	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(stats.total, 2);
 	ft_putstr_fd("\n", 2);
 	ft_putstr_fd("[bench] ", 2);
@@ -101,8 +107,6 @@ void	sort_and_bench(t_stack **a, t_stack **b, t_strategy strat, int mode)
 	t_stats	stats;
 
 	init_stats(&stats);
-	if (mode & MODE_COUNT_ONLY)
-		stats.print_ops = 0;
 	disorder = calculate_disorder(*a);
 	if (stack_size(*a) > 1)
 	{
@@ -111,9 +115,4 @@ void	sort_and_bench(t_stack **a, t_stack **b, t_strategy strat, int mode)
 	}
 	if (mode & MODE_BENCH)
 		print_benchmark(stats, disorder, strat);
-	if (mode & MODE_COUNT_ONLY)
-	{
-		ft_putnbr_fd(stats.total, 1);
-		ft_putstr_fd("\n", 1);
-	}
 }
