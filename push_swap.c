@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 15:56:17 by sahrandr          #+#    #+#             */
-/*   Updated: 2026/03/28 16:19:05 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/29 15:03:41 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,11 @@ static void	print_benchmark(t_stats stats, float disorder, t_strategy strat)
 			ft_putstr_fd("adaptive / O(n log n)\n", 2);
 	}
 	else if (strat == STRAT_SIMPLE)
-		ft_putstr_fd("simple (O(n^2))\n", 2);
+		ft_putstr_fd("simple / O(n^2)\n", 2);
 	else if (strat == STRAT_MEDIUM)
-		ft_putstr_fd("medium O(n√n)\n", 2);
+		ft_putstr_fd("medium / O(n√n)\n", 2);
 	else
-		ft_putstr_fd("complex (O(n log n))\n", 2);
+		ft_putstr_fd("complex / O(n log n)\n", 2);
 	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(stats.total, 2);
 	ft_putstr_fd("\n", 2);

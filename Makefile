@@ -48,7 +48,9 @@ BONUS_SRCS	= checker.c checker_ops.c checker_parse.c $(COMMON_SRCS)
 OBJS		= $(SRCS:.c=.o)
 BONUS_OBJS	= $(BONUS_SRCS:.c=.o)
 
-all:		$(NAME) $(BONUS_NAME)
+all:		$(NAME)
+
+bonus:		$(BONUS_NAME)
 
 $(NAME):		$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
