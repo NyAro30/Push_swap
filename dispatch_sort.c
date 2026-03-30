@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:49:48 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/03/30 15:31:24 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/03/30 15:53:34 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	dispatch_small(t_stack **a, t_stack **b, t_stats *stats, int size)
 {
+	stats->actual_strat = STRAT_SIMPLE;
 	if (size == 2 && ((*a)->value > (*a)->next->value))
 		sa(a, stats);
 	else if (size == 3)
